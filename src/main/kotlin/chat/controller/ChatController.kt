@@ -19,7 +19,7 @@ class ChatController{
     }
 
     @GetMapping("/chat/{chatId}")
-    fun getChat(@PathVariable("chatId") chatId: Int): List<ChatItem>
+    fun getChat(@PathVariable("chatId") chatId: Int): Chat
         = chatService.getChat(chatId)
 
     @PostMapping("/chat/new")

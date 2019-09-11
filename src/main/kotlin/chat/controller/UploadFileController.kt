@@ -15,7 +15,8 @@ class UploadFileController{
     private lateinit var fileStorage: FileStorage
 
     @PostMapping("/files/new")
-    fun uploadMultipartFile(@RequestParam("uploadFile") file: MultipartFile){
+    fun uploadMultipartFile(@RequestParam("file") file: MultipartFile){
+    	println("uploaded file: $file")
         fileStorage.store(file)
     }
 }

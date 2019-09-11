@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 
 interface ChatService{
     fun addItem(item: ChatItem)
-    fun getChat(chatId: Int): List<ChatItem>
+    fun getChat(chatId: Int): Chat
     fun getAllChats(): List<Chat>
     fun createChat(): Chat
 }
@@ -26,7 +26,7 @@ class ChatServiceImpl: ChatService{
     override fun addItem(item: ChatItem) {
         val chatItems = mutableListOf<ChatItem>()
         if(chats.containsKey(item.chatId)){
-            chatItems.addAll(chats[item.chatId]!!.chatItems)
+//            chatItems.addAll(chats[item.chatId]!!.chatItems)
         }
         else{
             println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
@@ -34,8 +34,8 @@ class ChatServiceImpl: ChatService{
         chatItems.add(item)
     }
 
-    override fun getChat(chatId: Int): List<ChatItem>
-        = chats.getOrDefault(chatId, Chat.defaultChat()).chatItems
+    override fun getChat(chatId: Int): Chat
+        = chats.getOrDefault(chatId, Chat.defaultChat())
 
     override fun getAllChats(): List<Chat>
         = chats.values.toList()
