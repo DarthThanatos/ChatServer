@@ -9,5 +9,5 @@ data class ChatItem(
     val text: String = "",
     val creationTime: String,
     val fileInfo: FileInfo? = null,
-    val child: ChatItem? = null
+    val children: List<ChatItem>? = null
 )
