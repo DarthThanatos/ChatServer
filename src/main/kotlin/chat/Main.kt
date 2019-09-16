@@ -16,8 +16,13 @@ class Application{
 
     @Bean
     fun run() = CommandLineRunner{
-        fileStorage.deleteAll()
-        fileStorage.init()
+    	try {
+		    //fileStorage.deleteAll()
+		    fileStorage.init()
+        }
+	     catch (e: Exception){
+	    	e.printStackTrace()
+	    }
     }
 }
 

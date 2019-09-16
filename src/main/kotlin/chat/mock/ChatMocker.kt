@@ -24,10 +24,22 @@ class ChatMocker{
                     "https://www.w3schools.com/howto/img_avatar.png"
                 ),
                 text = "Witam, byłam na badaniu Beta Hcg i nie potrafię odczytać dobrze, ktoś pomoże?",
-                fileInfo = FileInfo(
-                    filename = "20190517_34.jpg",
-                    url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
-                    sizeDesc = "32,73 Kb"
+                fileInfos = listOf(
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    )
                 ),
                 children = listOf(getMockedResponseChildItem(chatId), getMockedChildlessChatItem(chatId)),
                 creationTime = "2019-09-01 09:00:00"
@@ -42,6 +54,33 @@ class ChatMocker{
                     56,
                     "ala34",
                     "https://www.w3schools.com/howto/img_avatar2.png"
+                ),
+                fileInfos = listOf(
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    ),
+                    FileInfo(
+                        filename = "20190517_34.jpg",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        sizeDesc = "32,73 Kb"
+                    )
                 ),
                 text = "Miedzy 4 a 6 tygodniem. Beta raczej nie określa wieku ciąży, jak widać są bardzo dużo rozbieznosci. To badanie robi się w celu potwierdzenia lub wykluczenia ciazy oraz ewentualnie sprawdza się przyrost. Proponuję udać się do lekarza na USG za jakiś tydzień.",
                 creationTime = "2019-09-02 01:00:00",
