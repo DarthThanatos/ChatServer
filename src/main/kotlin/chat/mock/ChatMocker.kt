@@ -32,12 +32,12 @@ class ChatMocker{
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-1.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-2.png",
                         sizeDesc = "32,73 Kb"
                     )
                 ),
@@ -63,22 +63,22 @@ class ChatMocker{
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-1.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-2.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-3.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-4.png",
                         sizeDesc = "32,73 Kb"
                     )
                 ),
