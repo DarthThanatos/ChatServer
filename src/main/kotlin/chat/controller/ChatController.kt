@@ -14,9 +14,9 @@ class ChatController{
     private lateinit var chatService: ChatService
 
     @PostMapping("/chat")
-    fun postChatItem(@RequestBody chatItem: ChatItem){
+    fun postChatItem(@RequestBody chatItem: ChatItem) =
         chatService.addItem(chatItem)
-    }
+
 
     @GetMapping("/chat/{chatId}")
     fun getChat(@PathVariable("chatId") chatId: Int): Chat
@@ -34,4 +34,12 @@ class ChatController{
     @GetMapping("/chat/int-list")
     fun getTestIntList(): List<Int> = listOf(55,66)
 
+    @PostMapping("/chat/like")
+    fun likeCommentItem(@RequestBody item: ChatItem) =
+        chatService.likeCommentItem(item)
+
+
+    @PostMapping("/chat/report")
+    fun reportCommentItem(@RequestBody item: ChatItem) =
+        chatService.reportChatItem(item)
 }

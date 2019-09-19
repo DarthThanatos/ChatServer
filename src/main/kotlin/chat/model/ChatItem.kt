@@ -1,11 +1,14 @@
 package chat.model
 
 data class ChatItem(
-    val chatItemId: Int,
+    var chatItemId: Int?,
     val chatId: Int,
-    val user: User,
+    var user: User?,
     val text: String = "",
     val creationTime: String,
+    var likedByMe: Boolean = false,
+    var amountOfLikes: Int = 0,
+    var reportedByMe: Boolean = false,
     val fileInfos: List<FileInfo> = listOf(),
-    val children: List<ChatItem>? = null
+    val parentId: Int? = null
 )

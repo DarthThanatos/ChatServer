@@ -3,13 +3,17 @@ package chat.service
 import chat.mock.ChatMocker
 import chat.model.Chat
 import chat.model.ChatItem
+import chat.model.User
 import org.springframework.stereotype.Service
+import kotlin.random.Random
 
 interface ChatService{
-    fun addItem(item: ChatItem)
+    fun addItem(item: ChatItem): ChatItem?
     fun getChat(chatId: Int): Chat
     fun getAllChats(): List<Chat>
     fun createChat(): Chat
+    fun likeCommentItem(item: ChatItem): ChatItem?
+    fun reportChatItem(item: ChatItem): ChatItem?
 }
 
 @Suppress("unused")
@@ -23,15 +27,16 @@ class ChatServiceImpl: ChatService{
         chats[mockedChat.chatId] = mockedChat
     }
 
-    override fun addItem(item: ChatItem) {
-        val chatItems = mutableListOf<ChatItem>()
+    override fun addItem(item: ChatItem): ChatItem?{
+        item.chatItemId = Random.nextInt()
+        item.user = User(Random.nextInt(), "anonim", "https://www.w3schools.com/howto/img_avatar.png")
+        println(item)
         if(chats.containsKey(item.chatId)){
-//            chatItems.addAll(chats[item.chatId]!!.chatItems)
+            chats[item.chatId]!!.comments.add(item)
+            return item
         }
-        else{
-            println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
-        }
-        chatItems.add(item)
+        println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
+        return null
     }
 
     override fun getChat(chatId: Int): Chat
@@ -48,4 +53,20 @@ class ChatServiceImpl: ChatService{
         return chat
     }
 
+    override fun likeCommentItem(item: ChatItem): ChatItem? {
+        if(chats.containsKey(item.chatId)){
+            return chats[item.chatId]!!.comments.find { it.chatItemId == item.chatItemId }!!
+                .apply { likedByMe = true; amountOfLikes += 1 }
+        }
+        println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
+        return null
+    }
+
+    override fun reportChatItem(item: ChatItem): ChatItem? {
+        if(chats.containsKey(item.chatId)){
+            return chats[item.chatId]!!.comments.find { it.chatItemId == item.chatItemId }!!.apply { reportedByMe = true }
+        }
+        println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
+        return null
+    }
 }
