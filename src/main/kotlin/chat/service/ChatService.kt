@@ -53,10 +53,16 @@ class ChatServiceImpl: ChatService{
         return chat
     }
 
+    private fun findChatItem(item: ChatItem): ChatItem{
+        val chat = chats[item.chatId]
+        return if(chat!!.chatRoot!!.chatItemId == item.chatItemId) chat!!.chatRoot!! else 
+            chat!!.comments.find { it.chatItemId == item.chatItemId }!!
+    }
+
     override fun likeCommentItem(item: ChatItem): ChatItem? {
         if(chats.containsKey(item.chatId)){
-            return chats[item.chatId]!!.comments.find { it.chatItemId == item.chatItemId }!!
-                .apply { likedByMe = true; amountOfLikes += 1 }
+
+            return findChatItem(item).apply { likedByMe = true; amountOfLikes += 1 }
         }
         println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
         return null
@@ -64,7 +70,7 @@ class ChatServiceImpl: ChatService{
 
     override fun reportChatItem(item: ChatItem): ChatItem? {
         if(chats.containsKey(item.chatId)){
-            return chats[item.chatId]!!.comments.find { it.chatItemId == item.chatItemId }!!.apply { reportedByMe = true }
+            return findChatItem(item).apply { reportedByMe = true }
         }
         println("WARNING: chat with id ${item.chatId} not found, chat item ignored")
         return null

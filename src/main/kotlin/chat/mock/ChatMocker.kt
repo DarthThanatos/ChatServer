@@ -5,6 +5,8 @@ import chat.model.ChatItem
 import chat.model.FileInfo
 import chat.model.User
 
+val BASE_URL = "http://192.168.0.100:8080"
+
 class ChatMocker{
     companion object {
         fun getMockedChat(): Chat {
@@ -28,22 +30,21 @@ class ChatMocker{
                 fileInfos = listOf(
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-1.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-1.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-2.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-2.png",
                         sizeDesc = "32,73 Kb"
                     )
                 ),
-                creationTime = "2019-09-01 09:00:00",
-                reportedByMe = true
+                creationTime = "2019-09-01 09:00:00"
 
             )
 
@@ -59,27 +60,27 @@ class ChatMocker{
                 fileInfos = listOf(
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-1.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-1.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-2.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-2.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-3.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-3.png",
                         sizeDesc = "32,73 Kb"
                     ),
                     FileInfo(
                         filename = "20190517_34.jpg",
-                        url = "http://192.168.0.73:8080/files/Screenshot_20190826-120920-4.png",
+                        url = "$BASE_URL/files/Screenshot_20190826-120920-4.png",
                         sizeDesc = "32,73 Kb"
                     )
                 ),
